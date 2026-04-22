@@ -5,7 +5,6 @@ import java.util.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,11 +22,11 @@ public class Country {
     @Column(name = "national_day")
     private Date nationalDay;
     
-    @Column(name = "country_code1")
-    private String countryCode1;
-    
     @Column(name = "country_code2")
     private String countryCode2;
+    
+    @Column(name = "country_code3")
+    private String countryCode3;
     
     @Column(name = "region_id")
     private Long regionId;
@@ -40,16 +39,16 @@ public class Country {
         String name, 
         Double area, 
         Date nationalDay, 
-        String countryCode1, 
-        String countryCode2,
+        String countryCode2, 
+        String countryCode3,
         Long regionId
     ) {
         this.id = id;
         this.name = name;
         this.area = area;
         this.nationalDay = nationalDay;
-        this.countryCode1 = countryCode1;
         this.countryCode2 = countryCode2;
+        this.countryCode3 = countryCode3;
         this.regionId = regionId;
     }
 
@@ -85,20 +84,20 @@ public class Country {
         this.nationalDay = nationalDay;
     }
 
-    public String getCountryCode1() {
-        return countryCode1;
-    }
-
-    public void setCountryCode1(String countryCode1) {
-        this.countryCode1 = countryCode1;
-    }
-
     public String getCountryCode2() {
         return countryCode2;
     }
 
     public void setCountryCode2(String countryCode2) {
         this.countryCode2 = countryCode2;
+    }
+
+    public String getCountryCode3() {
+        return countryCode3;
+    }
+
+    public void setCountryCode3(String countryCode3) {
+        this.countryCode3 = countryCode3;
     }
 
     public Long getRegionId() {
