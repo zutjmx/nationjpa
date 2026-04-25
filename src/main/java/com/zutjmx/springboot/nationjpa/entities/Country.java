@@ -1,7 +1,5 @@
 package com.zutjmx.springboot.nationjpa.entities;
 
-import java.util.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -20,7 +18,7 @@ public class Country {
     private Double area;
     
     @Column(name = "national_day")
-    private Date nationalDay;
+    private String nationalDay;
     
     @Column(name = "country_code2")
     private String countryCode2;
@@ -38,7 +36,7 @@ public class Country {
         Long id, 
         String name, 
         Double area, 
-        Date nationalDay, 
+        String nationalDay, 
         String countryCode2, 
         String countryCode3,
         Long regionId
@@ -76,11 +74,11 @@ public class Country {
         this.area = area;
     }
 
-    public Date getNationalDay() {
+    public String getNationalDay() {
         return nationalDay;
     }
 
-    public void setNationalDay(Date nationalDay) {
+    public void setNationalDay(String nationalDay) {
         this.nationalDay = nationalDay;
     }
 
